@@ -1,1 +1,1 @@
-# tecnicas_pruebas
+# Técnicas de Prueba de Software
