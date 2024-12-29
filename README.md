@@ -1,1 +1,1 @@
-# Técnicas de Prueba de Software
+# Curso de Técnicas de Prueba de Software
