@@ -144,6 +144,7 @@ def test_actualizar_producto_desc():
     print(f"\nid modificado: {id}")
     print(f"total modificados: {registros_mod}")
 
+    # verificar que el producto se modificó en la base de datos haciendo una consulta
     prod_modificado = Producto.consultar_id(id)
 
     assert prod_modificado.id == id
