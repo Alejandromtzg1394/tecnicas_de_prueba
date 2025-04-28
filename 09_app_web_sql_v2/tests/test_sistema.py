@@ -96,7 +96,7 @@ def test_alta_producto_precio_negativo(app_flask, client):
 
 
 #---------------------------------------------
-# Testing de los métodos del modelo de datos
+# Testing de los métodos del modelo de datos: Clase Producto
 #---------------------------------------------
 
 def test_crear_producto():
@@ -121,6 +121,34 @@ def test_insertar_producto():
     assert prod_insertado.id == id
     assert prod_insertado.descripcion == desc
     assert prod_insertado.precio == precio
+
+
+def test_actualizar_producto_desc():
+    #-----------------------------
+    # Preparación de los datos  para el test
+    desc = 'camisa rosa'
+    precio = 900
+    # insertar producto
+    p = Producto(descripcion=desc, precio=precio)
+    id = p.insertar()    
+
+    #-----------------------------
+    # Test para probar la actulización de productos
+    # modificar producto
+
+    desc_esperada = "camisa rosa mexicano"
+    registros_esperados = 1
+    p.descripcion = desc_esperada
+    registros_mod = p.actualizar()
+    
+    print(f"\nid modificado: {id}")
+    print(f"total modificados: {registros_mod}")
+
+    prod_modificado = Producto.consultar_id(id)
+
+    assert prod_modificado.id == id
+    assert prod_modificado.descripcion == desc_esperada
+    assert registros_mod >= registros_esperados
 
 
 #===========================================================================

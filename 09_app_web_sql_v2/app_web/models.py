@@ -65,6 +65,7 @@ class Producto:
                 "UPDATE Productos SET descripcion = %s, precio = %s WHERE id = %s",
                 (self.descripcion, self.precio, self.id)
             )
+            # total de registros actualizados
             return cur.rowcount
         
     #---------------------------
