@@ -69,6 +69,7 @@ def test_inicio_sin_sesion(app_flask, client):
         data = response.get_data().decode('utf-8')
         msj_esperado = "No se ha iniciado sesión"
         assert msj_esperado in data
+        assert response.status_code == 200
         
 
 
@@ -93,6 +94,7 @@ def iniciar_sesion(client):
     data = response.get_data().decode('utf-8')
     msj_esperado = "Menú"
     assert msj_esperado in data
+    assert response.status_code == 200
 
 
 
