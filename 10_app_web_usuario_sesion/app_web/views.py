@@ -107,7 +107,7 @@ def registrar_rutas(app):
                 return  render_template('producto.html')
 
             except AltaProductoPrecioException as e:
-                msj = str(e)
+                msj = str(e) + "AltaProductoPrecioException"
                 flash(msj, 'danger')  
                 return  render_template('producto.html')
 
